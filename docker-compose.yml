@@ -1,0 +1,7 @@
+version: '2.5.1'
+services:
+    app:
+      build:
+        dockerfile: ./Dockerfile
+      ports:
+      - 80:80  

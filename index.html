@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+        <meta HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+        <meta HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+        <script src="js/jquery.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Chess by Nikos Drosakis</title>
+    </head>
+    <body>
+    <h3>Chess Algo</h3>
+    <div class="chesswrapper">
+        <div class="horbframes">
+            <span class="bf">a</span>
+            <span class="bf">b</span>
+            <span class="bf">c</span>
+            <span class="bf">d</span>
+            <span class="bf">e</span>
+            <span class="bf">f</span>
+            <span class="bf">g</span>
+            <span class="bf">h</span>
+        </div>
+        <div class="leftbf">
+            <span class="bfl">8</span>
+            <span class="bfl">7</span>
+            <span class="bfl">6</span>
+            <span class="bfl">5</span>
+            <span class="bfl">4</span>
+            <span class="bfl">3</span>
+            <span class="bfl">2</span>
+            <span class="bfl">1</span>
+        </div>
+        <div class="rightbf">
+            <span class="bfl">8</span>
+            <span class="bfl">7</span>
+            <span class="bfl">6</span>
+            <span class="bfl">5</span>
+            <span class="bfl">4</span>
+            <span class="bfl">3</span>
+            <span class="bfl">2</span>
+            <span class="bfl">1</span>
+        </div>
+        <div class="mainChessBoard">
+            <div class="cbox cwhite" id="a8"></div>
+            <div class="cbox cgray" id="b8"></div>
+            <div class="cbox cwhite" id="c8"></div>
+            <div class="cbox cgray" id="d8"></div>
+            <div class="cbox cwhite" id="e8"></div>
+            <div class="cbox cgray" id="f8"></div>
+            <div class="cbox cwhite" id="g8"></div>
+            <div class="cbox cgray" id="h8"></div>
+            <div class="cbox cgray" id="a7"></div>
+            <div class="cbox cwhite" id="b7"></div>
+            <div class="cbox cgray" id="c7"></div>
+            <div class="cbox cwhite" id="d7"></div>
+            <div class="cbox cgray" id="e7"></div>
+            <div class="cbox cwhite" id="f7"></div>
+            <div class="cbox cgray" id="g7"></div>
+            <div class="cbox cwhite" id="h7"></div>
+            <div class="cbox cwhite" id="a6"></div>
+            <div class="cbox cgray" id="b6"></div>
+            <div class="cbox cwhite" id="c6"></div>
+            <div class="cbox cgray" id="d6"></div>
+            <div class="cbox cwhite" id="e6"></div>
+            <div class="cbox cgray" id="f6"></div>
+            <div class="cbox cwhite" id="g6"></div>
+            <div class="cbox cgray" id="h6"></div>
+            <div class="cbox cgray" id="a5"></div>
+            <div class="cbox cwhite" id="b5"></div>
+            <div class="cbox cgray" id="c5"></div>
+            <div class="cbox cwhite" id="d5"></div>
+            <div class="cbox cgray" id="d5"></div>
+            <div class="cbox cwhite" id="f5"></div>
+            <div class="cbox cgray" id="g5"></div>
+            <div class="cbox cwhite" id="h5"></div>
+            <div class="cbox cwhite" id="a4"></div>
+            <div class="cbox cgray" id="b4"></div>
+            <div class="cbox cwhite" id="c4"></div>
+            <div class="cbox cgray" id="d4"></div>
+            <div class="cbox cwhite" id="e4"></div>
+            <div class="cbox cgray" id="f4"></div>
+            <div class="cbox cwhite" id="g4"></div>
+            <div class="cbox cgray" id="h4"></div>
+            <div class="cbox cgray" id="a3"></div>
+            <div class="cbox cwhite" id="b3"></div>
+            <div class="cbox cgray" id="c3"></div>
+            <div class="cbox cwhite" id="d3"></div>
+            <div class="cbox cgray" id="e3"></div>
+            <div class="cbox cwhite" id="f3"></div>
+            <div class="cbox cgray" id="g3"></div>
+            <div class="cbox cwhite" id="h3"></div>
+            <div class="cbox cwhite" id="a2"></div>
+            <div class="cbox cgray" id="b2"></div>
+            <div class="cbox cwhite" id="c2"></div>
+            <div class="cbox cgray" id="d2"></div>
+            <div class="cbox cwhite" id="e2"></div>
+            <div class="cbox cgray" id="f2"></div>
+            <div class="cbox cwhite" id="g2"></div>
+            <div class="cbox cgray" id="h2"></div>
+            <div class="cbox cgray" id="a1"></div>
+            <div class="cbox cwhite" id="b1"></div>
+            <div class="cbox cgray" id="c1"></div>
+            <div class="cbox cwhite" id="d1"></div>
+            <div class="cbox cgray" id="e1"></div>
+            <div class="cbox cwhite" id="f1"></div>
+            <div class="cbox cgray" id="g1"></div>
+            <div class="cbox cwhite" id="h1"></div>
+        </div>
+        <div class="horbframes">
+            <span class="bf">a</span>
+            <span class="bf">b</span>
+            <span class="bf">c</span>
+            <span class="bf">d</span>
+            <span class="bf">e</span>
+            <span class="bf">f</span>
+            <span class="bf">g</span>
+            <span class="bf">h</span>
+        </div>
+    </div>
+    <div id="gameboard">
+        <div id="turn"></div>
+        <div id="gamelog"></div>
+        <button id="newgame" class="btn btn-info btn">New game</button>
+        <div id="chessgamelist"></div>
+
+        <table id="chessgamehis">
+            <label>History</label>
+            <tr id="hislabels"><!--appended history---></tr>
+        </table>
+
+        <table>
+            <tr id="deadbox">
+                <label>Captured</label>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        v0.1 - Developed by <a href="drosakis.com">Nikos Drosakis</a>
+    </footer>
+
+    <script type="text/javascript" src="js/chess.js"></script>
+    </body>
+</html>
